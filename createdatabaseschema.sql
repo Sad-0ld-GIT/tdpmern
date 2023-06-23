@@ -2,29 +2,30 @@ CREATE DATABASE IF NOT EXISTS gamesdb;
 
 USE	gamesdb;
 
+DROP TABLE IF EXISTS orders;
 DROP TABLE IF EXISTS customers;
+DROP TABLE IF EXISTS products;
+
 CREATE TABLE IF NOT EXISTS customers(
 	id INT PRIMARY KEY AUTO_INCREMENT,
-    fname VARCHAR(60) NOT NULL,
-    lname VARCHAR(60) NOT NULL,
+    first_name VARCHAR(60) NOT NULL,
+    last_name VARCHAR(60) NOT NULL,
     age INT,
     contact CHAR(11)
 );
-    
-DROP TABLE IF EXISTS products;
+
 CREATE TABLE IF NOT EXISTS products(
 	id INT PRIMARY KEY AUTO_INCREMENT,
     title VARCHAR(100) NOT NULL,
-    details VARCHAR(200) NOT NULL,
-    genre VARCHAR(30) NOT NULL
+    genre VARCHAR(30) NOT NULL,
+    price FLOAT NOT NULL
 );
 
-DROP TABLE IF EXISTS orders;
 CREATE TABLE IF NOT EXISTS orders(
 	id INT PRIMARY KEY AUTO_INCREMENT,
-    dateofpurchase DATETIME NOT NULL,
-    custid INT NOT NULL,
-    prodid INT NOT NULL,
-    FOREIGN KEY(custid) REFERENCES customers(id),
-    FOREIGN KEY(prodid) REFERENCES products(id)
+    date_of_purchase DATETIME NOT NULL,
+    fk_cust_id INT NOT NULL,
+    fk_prod_id INT NOT NULL,
+    FOREIGN KEY(fk_cust_id) REFERENCES customers(id),
+    FOREIGN KEY(fk_prod_id) REFERENCES products(id)
 );
