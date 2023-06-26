@@ -17,7 +17,10 @@ VALUES ('call of duty', 'FPS', 45.00),
 INSERT INTO orders (date_of_purchase, fk_cust_id, fk_prod_id)
 VALUES (20230601, 1, 2),
 (20230612, 2, 4),
-(20230610, 3, 1);
+(20230610, 3, 1),
+(20230610, 1, 1),
+(20230610, 4, 3),
+(20230610, 5, 2);
 
 SELECT * FROM customers;
 SELECT * FROM products;
