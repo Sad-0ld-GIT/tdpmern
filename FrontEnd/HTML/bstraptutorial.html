@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" 
+    rel="stylesheet" 
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" 
+    crossorigin="anonymous">
+
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" 
+    crossorigin="anonymous"></script>
+    
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Navbar</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Dropdown
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled">Disabled</a>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+    </nav>
+
+    <div class="container text-center">
+        <div class="row align-items-center">
+          <div class="col">
+            One of three columns
+          </div>
+          <div class="col">
+            One of three columns
+          </div>
+          <div class="col">
+            One of three columns
+          </div>
+        </div>
+    </div>
+
+    <form>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Email address</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+          <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Password</label>
+          <input type="password" class="form-control" id="exampleInputPassword1">
+        </div>
+        <div class="mb-3 form-check">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          <label class="form-check-label" for="exampleCheck1">Check me out</label>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+      <br>
+      
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Launch demo modal
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+    <div id="carouselExampleIndicators" class="carousel slide">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="https://media.glassdoor.com/sqll/12542/qa-squarelogo-1562689648172.png" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="/FrontEnd/HTML/Images/COD.png" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="data:image/png;base64,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" class="d-block w-100" alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    
+</body>
+</html>
