@@ -1,4 +1,4 @@
-'use strict';
+// 'use strict';
 // Getting started
 // exercise 1
 // console.log("Phil");
@@ -114,5 +114,59 @@ console.log(animals.push(giraffe, zebra, elephant));
 for (let animal of animals) {
     console.log(animal.species);
 }
-
 console.log(animals[0]);
+
+let carPark = [
+    { make: "Audi", model: "A5", carReg: "AB12CDE" },
+    { make: "Hyundai", model: "i30", carReg: "AB11CDE" },
+    { make: "VW", model: "Golf", carReg: "AB10CDE" },
+    { make: "BMW", model: "M3", carReg: "AB13CDE" }
+]
+console.log(carPark[1].carReg);
+
+for (let car of carPark) {
+    console.log(car)
+}
+
+
+carPark[0].numberOfDoors = 5;
+carPark[1].numberOfDoors = 3;
+carPark[2].numberOfDoors = 5;
+carPark[3].numberOfDoors = 3;
+
+for (let car in carPark) {
+    console.log(car)
+}
+
+for (let car of carPark) {
+    console.log(car)
+}
+
+for (let car of carPark) {
+    console.log(car.numberOfDoors)
+}
+
+let counter = 1;
+
+while (counter <= 20) {
+    console.log(counter);
+    counter++;
+}
+
+
+for (x = 1; x <= 10; x++) {
+    for (y = 1; y <= 10; y++) {
+        console.log(x);
+    }
+}
+
+console.log(7 % 14);
+
+let age = 25;
+if (age < 18) {
+    console.log("underage")
+} else if (age > 65) {
+    console.log("overage")
+} else {
+    console.log("within age range")
+}
