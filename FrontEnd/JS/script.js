@@ -103,70 +103,150 @@
 
 // objects
 
-let giraffe = {species: "mammal", height: "14-19ft", weight: "1,180-1,192kg" };
-let zebra = {species: "mammal", height: "4-5ft", weight: "220–322kg" };
-let elephant = {species: "mammal", height: "9.8-13.1ft", weight: "6,000kg" };
+// let giraffe = {species: "mammal", height: "14-19ft", weight: "1,180-1,192kg" };
+// let zebra = {species: "mammal", height: "4-5ft", weight: "220–322kg" };
+// let elephant = {species: "mammal", height: "9.8-13.1ft", weight: "6,000kg" };
 
-let animals = [];
+// let animals = [];
 
-console.log(animals.push(giraffe, zebra, elephant));
+// console.log(animals.push(giraffe, zebra, elephant));
 
-for (let animal of animals) {
-    console.log(animal.species);
+// for (let animal of animals) {
+//     console.log(animal.species);
+// }
+// console.log(animals[0]);
+
+// let carPark = [
+//     { make: "Audi", model: "A5", carReg: "AB12CDE" },
+//     { make: "Hyundai", model: "i30", carReg: "AB11CDE" },
+//     { make: "VW", model: "Golf", carReg: "AB10CDE" },
+//     { make: "BMW", model: "M3", carReg: "AB13CDE" }
+// ]
+// console.log(carPark[1].carReg);
+
+// for (let car of carPark) {
+//     console.log(car)
+// }
+
+
+// carPark[0].numberOfDoors = 5;
+// carPark[1].numberOfDoors = 3;
+// carPark[2].numberOfDoors = 5;
+// carPark[3].numberOfDoors = 3;
+
+// for (let car in carPark) {
+//     console.log(car)
+// }
+
+// for (let car of carPark) {
+//     console.log(car)
+// }
+
+// for (let car of carPark) {
+//     console.log(car.numberOfDoors)
+// }
+
+// let counter = 1;
+
+// while (counter <= 20) {
+//     console.log(counter);
+//     counter++;
+// }
+
+
+// for (x = 1; x <= 10; x++) {
+//     for (y = 1; y <= 10; y++) {
+//         console.log(x);
+//     }
+// }
+
+// console.log(7 % 14);
+
+// let age = 25;
+// if (age < 18) {
+//     console.log("underage")
+// } else if (age > 65) {
+//     console.log("overage")
+// } else {
+//     console.log("within age range")
+// }
+
+// let a = 50;
+// let b = 100;
+// let c = 500;
+// let counter = 0;
+
+// while (counter < 1000) {
+//     if (counter > a && counter <= b) {
+//         console.log(`${counter} is greater than ${a}`);
+//     } if (counter > a && counter > b && counter <= c) {
+//         console.log(`${counter} is greater than both ${a} and ${b}`)
+//     } if (counter > a && counter > b && counter > c) {
+//         console.log(`${counter} is greater than ${a}, ${b} and ${c}`)
+//     }
+//     counter +=10;
+// }
+
+// Functions
+function yourName(name) {
+    console.log(`Hello ${name}`);
 }
-console.log(animals[0]);
 
-let carPark = [
-    { make: "Audi", model: "A5", carReg: "AB12CDE" },
-    { make: "Hyundai", model: "i30", carReg: "AB11CDE" },
-    { make: "VW", model: "Golf", carReg: "AB10CDE" },
-    { make: "BMW", model: "M3", carReg: "AB13CDE" }
-]
-console.log(carPark[1].carReg);
+yourName("Phil")
 
-for (let car of carPark) {
-    console.log(car)
+function add(a, b) {
+    return a + b;
 }
 
+console.log(add(3, 5));
 
-carPark[0].numberOfDoors = 5;
-carPark[1].numberOfDoors = 3;
-carPark[2].numberOfDoors = 5;
-carPark[3].numberOfDoors = 3;
-
-for (let car in carPark) {
-    console.log(car)
+function sub(a, b) {
+    return a - b;
 }
 
-for (let car of carPark) {
-    console.log(car)
+console.log(sub(3, 5));
+
+function div(a, b) {
+    return a / b;
 }
 
-for (let car of carPark) {
-    console.log(car.numberOfDoors)
-}
+console.log(div(3, 5));
 
-let counter = 1;
-
-while (counter <= 20) {
-    console.log(counter);
-    counter++;
-}
-
-
-for (x = 1; x <= 10; x++) {
-    for (y = 1; y <= 10; y++) {
-        console.log(x);
+function calc(op, a, b) {
+    if (op == "add") {
+        return a + b;
+    } else if (op == "sub") {
+        return a - b;
+    } else if (op == "div") {
+        return a / b;
+    } else {
+        console.log("operator not valid")
     }
 }
 
-console.log(7 % 14);
+console.log(calc("add", 20, 5));
+console.log(calc("sub", 16, 5));
+console.log(calc("div", 36, 7));
 
-let age = 25;
-if (age < 18) {
-    console.log("underage")
-} else if (age > 65) {
-    console.log("overage")
-} else {
-    console.log("within age range")
+function fib(n) {
+    let seq = [0, 1, 1]
+    for (i = 2; i <= n; i++) {
+        seq[i] = seq[i-1] + seq[i-2];
+    }
+    console.log(seq);
 }
+
+fib(prompt("Enter a number"));
+
+function isPrime(n) {
+    let prime = true
+    for (i = 0; i <= n; i++) {
+        if (i % n !== 0) {
+            prime = false;
+            console.log(`${n} is not prime`)
+            break;
+        }
+    } console.log(`${n} is not prime`);
+}
+
+// isPrime(prompt("enter a number"))
