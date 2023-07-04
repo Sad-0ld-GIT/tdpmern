@@ -188,45 +188,45 @@
 // }
 
 // Functions
-function yourName(name) {
-    console.log(`Hello ${name}`);
-}
+// function yourName(name) {
+//     console.log(`Hello ${name}`);
+// }
 
-yourName("Phil")
+// yourName("Phil")
 
-function add(a, b) {
-    return a + b;
-}
+// function add(a, b) {
+//     return a + b;
+// }
 
-console.log(add(3, 5));
+// console.log(add(3, 5));
 
-function sub(a, b) {
-    return a - b;
-}
+// function sub(a, b) {
+//     return a - b;
+// }
 
-console.log(sub(3, 5));
+// console.log(sub(3, 5));
 
-function div(a, b) {
-    return a / b;
-}
+// function div(a, b) {
+//     return a / b;
+// }
 
-console.log(div(3, 5));
+// console.log(div(3, 5));
 
-function calc(op, a, b) {
-    if (op == "add") {
-        return a + b;
-    } else if (op == "sub") {
-        return a - b;
-    } else if (op == "div") {
-        return a / b;
-    } else {
-        console.log("operator not valid")
-    }
-}
+// function calc(op, a, b) {
+//     if (op == "add") {
+//         return a + b;
+//     } else if (op == "sub") {
+//         return a - b;
+//     } else if (op == "div") {
+//         return a / b;
+//     } else {
+//         console.log("operator not valid")
+//     }
+// }
 
-console.log(calc("add", 20, 5));
-console.log(calc("sub", 16, 5));
-console.log(calc("div", 36, 7));
+// console.log(calc("add", 20, 5));
+// console.log(calc("sub", 16, 5));
+// console.log(calc("div", 36, 7));
 
 function fib(n) {
     let seq = [0, 1, 1]
@@ -237,16 +237,33 @@ function fib(n) {
 }
 
 fib(prompt("Enter a number"));
+// fib(15);
 
 function isPrime(n) {
     let prime = true
-    for (i = 0; i <= n; i++) {
-        if (i % n !== 0) {
+    for (let i = 2; i < n; i++) {
+        if (n % i == 0) {
             prime = false;
-            console.log(`${n} is not prime`)
             break;
-        }
-    } console.log(`${n} is not prime`);
+        } 
+    } if (prime == true) {
+        console.log(`${n} is prime`);
+    } else {
+        console.log(`${n} is not prime`);
+    }
 }
 
-// isPrime(prompt("enter a number"))
+isPrime(prompt("enter a number"))
+
+// const helloWorld = (name) => `Hello ${name}`;
+// console.log(helloWorld("Phil"));
+
+// const list = [1,1,2,2,44,66,33,77,88];
+
+// list.forEach(i => console.log(i));
+
+// // const add = (x, y) => x + y;
+// // const sub = (x, y) => x - y;
+// // const div = (x, y) => x / y;
+
+// console.log(7 )
