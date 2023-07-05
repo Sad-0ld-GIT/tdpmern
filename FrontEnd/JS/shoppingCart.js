@@ -36,19 +36,6 @@ console.log(`Total cost: ${totalCost}`);
 
 const newList = shoppingList.map( item => {return {...item, cost: priceList[item.name]}} );
 
-console.log(newList);
-
-for (let index in newList){
-    console.log(index)
-
-    let item = newList[index]
-    console.log(item)
-
-    let name = item.name
-    let quanity = item.quantity
-    let cost = item.cost
-
-    console.log(`${quanity}x ${name}, £${quanity * cost}`)
+for (item of newList) {
+    console.log(`${item.name} x ${item.quantity}`)
 }
-
-console.log("Total: ", totalCost)
