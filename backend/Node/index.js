@@ -47,8 +47,8 @@ if (randNum == 1) {
 } else if (randNum == 3) {
     comp = "scissors"
 }
-
-console.log(comp)
+console.log(player);
+console.log(comp);
 
 result = ""
 
@@ -58,7 +58,7 @@ result = ""
     result = "comp wins"
  } else if (player == "paper" && comp == "rock") {
     result = "player wins"
- } else if (player = "paper &&" && comp == "scissors") {
+ } else if (player == "paper" && comp == "scissors") {
     result = "comp wins"
  } else if (player == "rock" && comp == "paper") {
     result = "comp wins"
