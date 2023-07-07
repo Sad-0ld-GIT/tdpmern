@@ -1,71 +1,103 @@
-// https://www.npmjs.com/package/colors
-// print 3 lines
-// one with coloured text
-// one with coloured background
-// one with both text and background
-// print 1 - 100 with random colours
-// remake fizzbuzzzing but..
-// mutltiple of 3 says fizz in red
-// mutltiple of 5 says buzz in green
-// mutltiple of 7 says zing in blue
-// single player rock paper scissors
-// Math.random() for computer
-// prompt-sync is the module name for inputs https://www.npmjs.com/package/prompt-sync// ext add colour
-// add lizard and spock
+// TASK
+// connect to MongoDB using Mongoose
+// create a schema
+// create a model from the schema
+// add a disconnect clause to the .then of the connect
 
-const colors = require("colors")
-const promptSync = require('prompt-sync');
-const prompt = promptSync();
+// create an object
+// read all objects
 
-console.log("Hello world!".america)
-console.log("Hello world!".bgRed)
-console.log("Hellow world!".green.bgWhite)
+// EXT
+// install prompt-sync 
+// (user inputs now)
+// make a path for creating an object
+// make an option to read all objects
+// make an option to update
 
-for (i = 1; i <= 100; i++) {
-    console.log(i.toString().random)
-}
+const promptSync = require('prompt-sync')
+const prompt = promptSync()
+const mongoose  = require("mongoose")
 
-for (i = 1; i <= 100; i++) {
-    console.log((i))
-    if (i % 3 == 0) {
-        console.log(colors.red("fizz"))
-    } if (i % 5 == 0) {
-        console.log(colors.green("buzz"))
-    } if (i % 7 == 0) {
-        console.log(colors.blue("zing"))
+mongoose.connect("mongodb://127.0.0.1:27017").then (() => {
+    console.log("Connected!")
+    usersChoice()
+    // addCar()
+    // listCars()
+    // findMake()
+    // upateCar()
+    }).then (() => {
+        // mongoose.disconnect()
+        // console.log("Disconnected!")
+    }).catch(err => {
+        console.log("There has been an error")
+})
+
+const carSchema = new mongoose.Schema({
+    reg:String,
+    age:Number,
+    make:String,
+    model:String,
+    colour:String
+})
+
+const carModel = mongoose.model("Car", carSchema)
+
+function usersChoice () {
+    const input = prompt("Enter choice to view, add or edit cars ")
+    switch (input.toLowerCase()) {
+        case "add":
+            addCar()
+            break;
+        case "list":
+            listCars()
+            break;
+        case "find":
+            findMake()
+            break;
+        case "update":
+            upateCar()
+            break;
+        case "exit":
+            mongoose.disconnect()
+            console.log("Disconnected!")
+            break;
+        default:
+            usersChoice()
     }
 }
 
-let player = prompt('Enter rock, paper or scissors');
-let randNum = Math.floor(Math.random() * 3) + 1;
-let comp = ""
-
-if (randNum == 1) {
-    comp = "rock" 
-} else if (randNum == 2) {
-    comp = "paper"
-} else if (randNum == 3) {
-    comp = "scissors"
+const addCar = function() {
+    carModel.create({
+        reg: prompt("Enter reg number "),
+        age: prompt("Enter age of car "),
+        make: prompt("Enter car make "),
+        model: prompt("Enter model "),
+        colour: prompt("Enter colour ")
+})
 }
-console.log(player);
-console.log(comp);
 
-result = ""
+const listCars = function() {
+     carModel.find({}).then(res => {
+        for (let car of res) {
+            console.log(car)
+        }
+    })
+}
 
- if (player == "scissors" && comp == "paper") {
-    result = "player wins"
- } else if (player == "scissors" && comp == "rock") {
-    result = "comp wins"
- } else if (player == "paper" && comp == "rock") {
-    result = "player wins"
- } else if (player == "paper" && comp == "scissors") {
-    result = "comp wins"
- } else if (player == "rock" && comp == "paper") {
-    result = "comp wins"
- } else if (player == "rock" && comp == "scissors") {
-    result = "player wins"
- } else if (player == comp) {
-    result = "it's a draw"
- }
+const findMake = function() {
+    carModel.find({make: prompt("enter car make ")}).then(res => {
+        for (let car of res) {
+            console.log(car)
+        }
+    })
+}
 
- console.log(result);
+const upateCar = function() {
+    carModel.updateOne({reg: prompt("enter current reg")}, {
+        reg: prompt("Enter reg number "),
+        age: prompt("Enter age of car "),
+        make: prompt("Enter car make "),
+        model: prompt("Enter model "),
+        colour: prompt("Enter colour ")
+    })
+}
