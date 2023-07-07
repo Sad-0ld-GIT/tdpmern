@@ -14,9 +14,9 @@
 // make an option to read all objects
 // make an option to update
 
-const prompt = require("prompt-sync")()
+const promptSync = require('prompt-sync')
+const prompt = promptSync()
 const mongoose  = require("mongoose")
-const carModel = require("./models.js")
 
 mongoose.connect("mongodb://127.0.0.1:27017").then (() => {
     console.log("Connected!")
@@ -26,17 +26,25 @@ mongoose.connect("mongodb://127.0.0.1:27017").then (() => {
     // findMake()
     // upateCar()
     }).then (() => {
-    // mongoose.disconnect()
-    // console.log("Disconnected!")
-}).catch(err => {
-    // console.log("There has been an error")
+        // mongoose.disconnect()
+        // console.log("Disconnected!")
+    }).catch(err => {
+        console.log("There has been an error")
 })
 
-function usersChoice () {
-    console.log("1 - add")
+const carSchema = new mongoose.Schema({
+    reg:String,
+    age:Number,
+    make:String,
+    model:String,
+    colour:String
+})
+
+const carModel = mongoose.model("Car", carSchema)
+
+function usersChoice () { 
     switch (prompt("Enter choice to view, add or edit cars ")) {
         case "add":
-        case "1":
             addCar()
             break;
         case "list":
@@ -47,9 +55,6 @@ function usersChoice () {
             break;
         case "update":
             upateCar()
-            break;
-        case "clear":
-            deleteAll()
             break;
         case "exit":
             mongoose.disconnect()
@@ -67,16 +72,14 @@ const addCar = function() {
         make: prompt("Enter car make "),
         model: prompt("Enter model "),
         colour: prompt("Enter colour ")
-    })
-    usersChoice()
+})
 }
 
 const listCars = function() {
-    carModel.find({}).then(res => {
+     carModel.find({}).then(res => {
         for (let car of res) {
             console.log(car)
         }
-        usersChoice()
     })
 }
 
@@ -85,24 +88,15 @@ const findMake = function() {
         for (let car of res) {
             console.log(car)
         }
-        usersChoice()
     })
 }
 
 const upateCar = function() {
-    carModel.updateOne({_id: prompt("enter car id")}, {
+    carModel.updateOne({reg: prompt("enter current reg")}, {
         reg: prompt("Enter reg number "),
         age: prompt("Enter age of car "),
         make: prompt("Enter car make "),
         model: prompt("Enter model "),
         colour: prompt("Enter colour ")
-    })
-    usersChoice()
-}
-
-const deleteAll = function() {
-    carModel.deleteMany({}).then(res => {
-            console.log("all data deleted")
-            usersChoice()
     })
 }
