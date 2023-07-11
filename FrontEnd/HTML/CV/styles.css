@@ -1,0 +1,26 @@
+img {
+    /* width: 150px; */
+    height: 100px;
+}
+
+h3 {
+    color: blue;
+}
+
+h6 {
+    /* removed styling */
+    all: unset;
+    /* changed the font to be smaller */
+    font-size: 10px;
+    /* made the text grey */
+    color: grey;
+    /* made the text bold */
+    font-weight: bold;
+    /* display in it's own content 'block' */
+    display:block;
+}
+
+p {
+    /* margin: 0px 0px 20px 0px; */
+    margin-top: 20px;
+}

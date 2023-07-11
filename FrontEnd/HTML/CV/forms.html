@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Document</title>
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    </head>
+    <body>
+        
+        <!-- FORMS -->
+        <!-- have a method and an action -->
+        <!-- METHOD -> HOW to send information -->
+        <!-- ACTION -> WHERE to send information -->
+
+        <!-- GET method: sends form input into URL bar -->
+        <!-- with a name : value pair -->
+        <!-- used like a hyperlink -->
+        <form method="get" action="./search.html">
+            <h4>GET Form</h4>
+            <!-- a way to INPUT data -->
+            <input name="query" type="text">
+            <!-- a button to send the form -->
+            <button type="submit">submit</button>
+        </form>
+
+        <!-- POST sends data to the action URL -->
+        <form method="post" action="./mailform.php">
+            <h4>POST Form</h4>
+            <input name="email" type="text">
+            <button type="submit">submit</button>
+        </form>
+
+        <!-- you don't NEED to have an action or method for a form -->
+
+        <form>
+            <h4>MORE INPUTS</h4>
+            <!-- checkboxes -->
+            <input type="checkbox" name="checkboxOne" value="1"/>1
+            <input type="checkbox" name="checkboxTwo" value="2"/>2
+
+            <!-- radio buttons are similar but can be linked -->
+            <fieldset>
+                <input type="radio" name="choice" value="a"/>a
+                <input type="radio" name="choice" value="b"/>b
+                <input type="radio" name="choice" value="c"/>c
+                <input type="radio" name="choice" value="d"/>d
+            </fieldset>
+
+            <!-- date selection -->
+            <input type="date" name="meeting"/>
+
+            <!-- colour picker -->
+            <input type="color" name="colourPicker"/>
+        </form>
+
+        
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    </body>
+</html>
