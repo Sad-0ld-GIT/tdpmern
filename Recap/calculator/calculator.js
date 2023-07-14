@@ -87,11 +87,10 @@ clearSum.onclick =()=> {
 }
 
 let addToList =(total)=> {
-
     let el = document.createElement('li');
     el.innerText = total;
+    el.classList.add("list-group-item")
     output.appendChild(el);
-
 }
 
 console.log(total)
