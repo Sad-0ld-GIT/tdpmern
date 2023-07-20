@@ -14,17 +14,17 @@ server.get("/trainer/tadas",function(req,res){
 })
 
 server.get("/results/shafeeq",function(req,res){
-    res.render("results.ejs", {"sname":"Shafeeq", "phy": 30, "chem": 50, "math": 60 })
+    res.render("results.ejs", {"sname":"Shafeeq", "phy": 100, "chem": 80, "math": 110 })
     res.end()
 })
 
 server.get("/results/phil",function(req,res){
-    res.render("results.ejs", {"sname":"Phil", "phy": 25, "chem": 40, "math": 35 })
+    res.render("results.ejs", {"sname":"Phil", "phy": 120, "chem": 140, "math": 90 })
     res.end()
 })
 
 server.get("/results/matt",function(req,res){
-    res.render("results.ejs", {"sname":"Matt", "phy": 26, "chem": 33, "math": 44 })
+    res.render("results.ejs", {"sname":"Matt", "phy": 90, "chem": 75, "math": 80 })
     res.end()
 })
 

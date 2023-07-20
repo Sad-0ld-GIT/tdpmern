@@ -1,4 +1,15 @@
 <Html>
+
+    <% 
+    let total = phy+chem+math
+    let per = total*100/450
+    let result = ""
+    if (per >= 60) {
+        result = "You have PASSED"
+    } else {
+        result = "You have FAILED"
+    }
+    %>
     <h1>
         <center>Exam results</center>
     </h1>
@@ -19,5 +30,25 @@
             <td>Maths</td>
             <td><%= math %></td>
         </tr>
+        <tr>
+            <td>Total</td>
+            <td><%= total %></td>
+        </tr>
+        <tr>
+            <td>Percentage</td>
+            <td><%= per %></td>
+        </tr>
+
+        <% if (per >= 60) { %>
+            <tr bgcolor="blue">
+                <td>Result</td>
+                <td><b><%= result %></b></td>
+            </tr>
+        <% } else { %>
+            <tr bgcolor="red">
+                <td>Result</td>
+                <td><b><%= result %></b></td>
+            </tr>
+        <% } %>
     </table>
 </Html>
