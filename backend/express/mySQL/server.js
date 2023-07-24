@@ -6,7 +6,7 @@ let db = mysql.createConnection({
     host:"localhost",
     user:"root",
     password:"root",
-    database:"katnbs"
+    database:"nbs2"
 });
 
 db.connect();
