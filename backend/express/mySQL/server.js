@@ -15,7 +15,7 @@ let db = mysql.createConnection({
 db.connect();
 
 server.get("/addEmployee",function(re,res){
-    res.render("Form.ejs")
+    res.render("form.ejs")
 })
 
 server.post("/saveEmployee",function(req,res){
