@@ -1,6 +1,8 @@
 CREATE DATABASE nbs2;
 USE nbs2;
 
+ALTER USER 'root'@'localhost' IDENTIFIED WITH 'mysql_native_password' BY 'root';
+
 CREATE TABLE employees (empno int, name VARCHAR(20, salary INT, department VARCHAR(20)));
 
 INSERT INTO employees VALUE (101, "Matt", 2000, "IT");
