@@ -8,3 +8,5 @@ INSERT INTO employees VALUE (101, "Matt", 2000, "IT");
 INSERT INTO employees VALUE (102, "Brad", 2000, "HR");
 INSERT INTO employees VALUE (103, "Neil", 2000, "Sales");
 INSERT INTO employees VALUE (103, "Phil", 2000, "IT");
+
+CREATE TABLE IF NOT EXISTS bank (accno CHAR(5), name VARCHAR(20));
